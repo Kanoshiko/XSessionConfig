@@ -1,0 +1,35 @@
+#!/bin/bash
+
+lock() {
+    i3lock -d -e -c 101010
+}
+
+manager() {
+    sudo /usr/bin/dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.$1" boolean:true
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        lock && manager Suspend
+        ;;
+    hibernate)
+        lock && manager Hibernate
+        ;;
+    reboot)
+        manager Reboot
+        ;;
+    shutdown)
+        manager PowerOff
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
