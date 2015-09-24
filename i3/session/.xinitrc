@@ -4,7 +4,7 @@ source $HOME/.profile
 
 /usr/bin/xrdb -load $HOME/.Xresources
 
-/usr/bin/display -window root $HOME/Images/digital-blasphemy-2560x1024-0029-1129708.jpg
+/usr/bin/display -window root $HOME/Images/desktop-background.jpg
 
 /usr/bin/urxvtd -q -f -o
 
@@ -15,7 +15,7 @@ source $HOME/.profile
 /usr/bin/pulseaudio --start
 /usr/bin/pax11publish
 
-/usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 20 -killer "i3exit sleep" -notify 10 -notifier "notify-send Veille dans 10 secondes" -corners 00+- -detectsleep &
+/usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 20 -killer "i3exit suspend" -notify 10 -notifier "notify-send Verrouillage dans 10 secondes" -corners 00+- -detectsleep &
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
