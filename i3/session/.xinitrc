@@ -15,7 +15,7 @@ source $HOME/.profile
 /usr/bin/pulseaudio --start
 /usr/bin/pax11publish
 
-/usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 20 -killer "i3exit suspend" -notify 10 -notifier "notify-send Verrouillage dans 10 secondes" -corners 00+- -detectsleep &
+/usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 15 -killer "i3exit suspend" -notify 10 -notifier "notify-send 'Verrouillage imminent'" -corners 00+- -detectsleep &
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
