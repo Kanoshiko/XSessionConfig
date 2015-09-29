@@ -17,8 +17,7 @@ source $HOME/.profile
 
 /usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 15 -killer "i3exit suspend" -notify 10 -notifier "notify-send 'Verrouillage imminent'" -corners 00+- -detectsleep &
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 
 exec /usr/bin/i3
 
