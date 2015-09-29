@@ -41,7 +41,7 @@ URxvt*cursorBlink:                    true
 ! URxvt*background:                     color
 ! URxvt*foreground:                     color
 URxvt*background:                     black
-URxvt*foreground:                     lightgray
+URxvt*foreground:                     gray
 ! URxvt*color0:                         color
 ! URxvt*color1:                         color
 ! URxvt*color2:                         color
@@ -58,6 +58,22 @@ URxvt*foreground:                     lightgray
 ! URxvt*color13:                        color
 ! URxvt*color14:                        color
 ! URxvt*color15:                        color
+URxvt*color0:                         black
+URxvt*color1:                         red
+URxvt*color2:                         green
+URxvt*color3:                         yellow
+URxvt*color4:                         slate blue
+URxvt*color5:                         agenta
+URxvt*color6:                         cyan
+URxvt*color7:                         gray 
+URxvt*color8:                         dark gray
+URxvt*color9:                         light red
+URxvt*color10:                        light green
+URxvt*color11:                        light yellow
+URxvt*color12:                        light slate blue
+URxvt*color13:                        light magenta
+URxvt*color14:                        light cyan
+URxvt*color15:                        white
 ! URxvt*colorBD:                        color
 ! URxvt*colorIT:                        color
 ! URxvt*colorUL:                        color
