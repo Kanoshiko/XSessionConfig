@@ -213,7 +213,6 @@ for_window [title="^Open Database File$"] floating enable
 for_window [class="Git-gui"] floating enable
 
 #exec --no-startup-id display -window root $HOME/Images/digital-blasphemy-2560x1024-0029-1129708.jpg
-exec --no-startup-id i3-msg 'workspace $workspace4; append_layout /home/perreal/.i3/im-layout.json'
 #exec --no-startup-id urxvtd -q -f -o
 #exec --no-startup-id numlockx on
 #exec --no-startup-id setxkbmap -option "compose:rctrl" -option "terminate:ctrl_alt_bksp"
