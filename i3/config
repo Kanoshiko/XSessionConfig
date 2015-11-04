@@ -212,6 +212,9 @@ for_window [title="Pr[eé]ferences"] floating enable
 for_window [title="^Open Database File$"] floating enable
 for_window [class="Git-gui"] floating enable
 
+for_window [class="^net-ftb-"] floating disable
+assign [class="^(net-ftb-|Minecraft)"] $workspace10
+
 #exec --no-startup-id display -window root $HOME/Images/digital-blasphemy-2560x1024-0029-1129708.jpg
 #exec --no-startup-id urxvtd -q -f -o
 #exec --no-startup-id numlockx on
