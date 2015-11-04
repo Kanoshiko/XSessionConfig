@@ -59,19 +59,19 @@ URxvt*foreground:                     gray
 ! URxvt*color14:                        color
 ! URxvt*color15:                        color
 URxvt*color0:                         black
-URxvt*color1:                         red
+URxvt*color1:                         red3
 URxvt*color2:                         green
 URxvt*color3:                         yellow
 URxvt*color4:                         slate blue
-URxvt*color5:                         agenta
+URxvt*color5:                         magenta3
 URxvt*color6:                         cyan
 URxvt*color7:                         gray 
 URxvt*color8:                         dark gray
-URxvt*color9:                         light red
+URxvt*color9:                         red
 URxvt*color10:                        light green
 URxvt*color11:                        light yellow
 URxvt*color12:                        light slate blue
-URxvt*color13:                        light magenta
+URxvt*color13:                        magenta
 URxvt*color14:                        light cyan
 URxvt*color15:                        white
 ! URxvt*colorBD:                        color
