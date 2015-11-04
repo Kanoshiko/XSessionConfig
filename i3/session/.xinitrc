@@ -17,7 +17,7 @@ source $HOME/.profile
 
 $HOME/bin/btsync --config $HOME/.btsync.json
 
-/usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 15 -killer "i3exit suspend" -notify 10 -notifier "notify-send 'Verrouillage imminent'" -corners 00+- -detectsleep &
+/usr/bin/xautolock -time 5 -locker "i3exit lock" -killtime 15 -killer "i3exit suspend" -notify 10 -notifier "notify-send 'Verrouillage imminent'" -corners 00+- -detectsleep -noclose &
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 
