@@ -11,16 +11,18 @@
 
 set $mod Mod4
 
-set $workspace1 "1: Default"
-set $workspace2 "2: Dev"
-set $workspace3 "3: Utils"
-set $workspace4 "4: IM"
-set $workspace5 "5: Mail"
-set $workspace6 "6"
-set $workspace7 "7: WWW"
-set $workspace8 "8"
+set $workspace1 "1: Mail"
+set $workspace2 "2: Shell"
+set $workspace3 "3: Dev"
+set $workspace4 "4: Web"
+set $workspace5 "5: Utils"
+set $workspace6 "6: IM"
+set $workspace7 "7: Mail Perso"
+set $workspace8 "8: Web Perso"
 set $workspace9 "9"
 set $workspace10 "10"
+
+#xrandr --output DP-1 --right-of DVI-I-1
 
 workspace $workspace1 output DVI-I-1
 workspace $workspace3 output DVI-I-1
@@ -28,11 +30,11 @@ workspace $workspace5 output DVI-I-1
 workspace $workspace7 output DVI-I-1
 workspace $workspace9 output DVI-I-1
 
-workspace $workspace2 output DP-0
-workspace $workspace4 output DP-0
-workspace $workspace6 output DP-0
-workspace $workspace8 output DP-0
-workspace $workspace10 output DP-0
+workspace $workspace2 output DP-1
+workspace $workspace4 output DP-1
+workspace $workspace6 output DP-1
+workspace $workspace8 output DP-1
+workspace $workspace10 output DP-1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -196,17 +198,33 @@ hide_edge_borders both
 
 workspace_layout tabbed
 
-assign [class="^NetBeans"] $workspace2
+#$workspace1 "1: Mail"
 
-assign [class="^KeePass2"] $workspace3
-assign [class="^Seafile-applet"] $workspace3
+#$workspace2 "2: Shell"
+assign [class="^URxvt"] $workspace2
 
-assign [class="^Firefox$"] $workspace7
+#$workspace3 "3: Dev"
+assign [class="^NetBeans"] $workspace3
+assign [class="^Atom"] $workspace3
 
-assign [class="^Pidgin"] $workspace4
-assign [class="^Firefox$" title="^Messenger"] $workspace4
+#$workspace4 "4: Web"
 
-assign [class="^Thunderbird$"] $workspace5
+#$workspace5 "5: Utils"
+assign [class="^Seafile-applet"] $workspace5
+assign [class="^Dropbox"] $workspace5
+assign [class="^Nautilus"] $workspace5
+
+#$workspace6 "6: IM"
+assign [class="^Pidgin"] $workspace6
+
+#$workspace7 "7: Mail Perso"
+assign [class="^Thunderbird$"] $workspace7
+
+#$workspace8 "8: Web Perso"
+
+#$workspace9 "9"
+
+#$workspace10 "10"
 
 for_window [title="Pr[eé]ferences"] floating enable
 for_window [title="^Open Database File$"] floating enable
@@ -220,13 +238,19 @@ assign [class="^(net-ftb-|Minecraft)"] $workspace10
 #exec --no-startup-id numlockx on
 #exec --no-startup-id setxkbmap -option "compose:rctrl" -option "terminate:ctrl_alt_bksp"
 
-exec exec urxvt
-exec exec firefox
+exec exec urxvtcd
+#exec exec $HOME/.i3/i3firefox
+exec --no-startup-id i3-msg 'workspace 4: Web; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1: Mail; exec $HOME/.i3/i3partage'
+exec --no-startup-id i3-msg 'workspace 8: Web Perso; exec $HOME/.i3/i3facebook'
 exec exec thunderbird
-exec exec urbackup_client_gui
-exec exec pidgin
+exec exec netbeans
+exec exec dropbox start
 exec exec seafile-applet
-exec exec keepass2
+exec exec pidgin
+exec exec nautilus --no-desktop
+
+#exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
 
 set $mode_system [L]ock Log[o]ut [S]uspend [H]ibernate [R]eboot Shu[t]down
 mode "$mode_system" {
@@ -234,7 +258,7 @@ mode "$mode_system" {
     bindsym o exec --no-startup-id i3exit logout, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym r exec --no-startup-id i3:exit reboot, mode "default"
     bindsym t exec --no-startup-id i3exit shutdown, mode "default"
 
 # back to normal: Enter or Escape
@@ -242,4 +266,3 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
-

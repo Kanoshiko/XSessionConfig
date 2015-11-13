@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sleep 4
+exec firefox --new-window https://partage.irstea.fr
+
+exit 0
